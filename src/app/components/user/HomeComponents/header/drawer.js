@@ -1,9 +1,9 @@
-import { CloseOutlined } from '@ant-design/icons';
-import { Drawer } from 'antd';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaFacebookF, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import useGetCategories from '@/app/customHooks/productHooks/useGetCategories';
+import { Drawer } from 'antd';
+import { CloseOutlined } from '@ant-design/icons';
 export default function HeaderDrawer({ drawerVisible, setDrawerVisible }) {
   const {categories} = useGetCategories()
   const closeDrawer = () => setDrawerVisible(false);
@@ -16,7 +16,7 @@ export default function HeaderDrawer({ drawerVisible, setDrawerVisible }) {
       className="lg:hidden relative z-50"
       height="100vh"
       closeIcon={
-        <CloseOutlined 
+        <CloseOutlined
           style={{ 
             color: 'black', 
             fontSize: '20px',

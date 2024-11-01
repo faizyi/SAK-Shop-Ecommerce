@@ -1,6 +1,7 @@
 import useSearchProduct from '@/app/customHooks/userHooks/productHooks/useSearchProduct';
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
+import SearchProductDetails from './SearchProductDetails';
 export default function HeaderSearchBar({ setShowSearch,}) {
   const {value, serachData, handleSearch} = useSearchProduct();
   return (

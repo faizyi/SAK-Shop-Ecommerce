@@ -3,7 +3,6 @@ import useGetProduct from "@/app/customHooks/productHooks/useGetProduct";
 import Link from "next/link";
 export default function FeaturedProductsSection() {
   const {allProducts} = useGetProduct();
-  // console.log(allProducts)
   return (
     <section className="w-full py-12 md:py-12 lg:py-24border-b">
       <div className="container mx-auto px-4">
