@@ -1,7 +1,5 @@
-import React from 'react'
-
 export default function page() {
   return (
-    <div>phom</div>
+    <div>page</div>
   )
 }
