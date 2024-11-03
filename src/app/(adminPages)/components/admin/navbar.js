@@ -3,11 +3,10 @@ import { showSidebar } from '@/app/redux/openSidebar/OSSlice';
 import { toogleMode } from '@/app/redux/mode/modeSlice';  // Import the toggle action
 import React, { useState } from 'react';
 import { FaUserCircle, FaBars, FaMoon, FaSun } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 const Navbar = () => {
     const dispatch = useDispatch();
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const { theme, color } = useSelector((state) => state.mode);  // Get theme and color from Redux
     const handleClick = () => {
         setDropdownOpen(!dropdownOpen);
     };
@@ -29,11 +28,11 @@ const Navbar = () => {
                     </a>
                 </div>
                 <div className="flex items-center gap-2">
-                    <div>
+                    {/* <div>
                         <span onClick={() => dispatch(toogleMode())} 
                         className="text-2xl cursor-pointer text-gray-700 dark:text-gray-300">
                         {theme === "light" ? <FaMoon/> : <FaSun/>}</span>
-                    </div>
+                    </div> */}
                     <div className="cursor-pointer flex items-center ms-3 relative" onClick={handleClick}>
                     <p className="mr-2 font-bold text-sm text-gray-900 dark:text-white">Neil Sims</p>
                         <button

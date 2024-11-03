@@ -8,7 +8,6 @@ import { hideSidebar } from "@/app/redux/openSidebar/OSSlice";
 const AdminSidebar = () => {
     const dispatch = useDispatch();
     const { isOpenSidebar } = useSelector((state) => state.sidebar);
-    const { bg, color } = useSelector((state) => state.mode);  // Use bg and color from Redux
     const pathname = usePathname();
 
     return (

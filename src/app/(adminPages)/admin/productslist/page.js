@@ -9,7 +9,6 @@ import EditProductModal from "../../components/admin/editProductModal";
 export default function ProductsList() {
   const { isLoading } = useSelector((state) => state.loader);
   const { isProducts } = useSelector((state) => state.product);
-  const { bgP, color, bg } = useSelector((state) => state.mode);
   const { query, handleSearch, updateFilteredProducts } = useSearchHook();
   const { handleDeleteClick } = delProductHook(updateFilteredProducts);
   const { showModal, handleEditClick, handleCloseClick, 
@@ -22,8 +21,8 @@ export default function ProductsList() {
         </div>
       ) : (
         <div className={`p-4 space-y-2
-        bg-${bgP} text-${color} 
-        ${bgP === "slate-950" ? "border border-gray-300" : "shadow-lg"} 
+        
+        
         rounded-lg w-full max-w-12xl`}>
           <h2 className="text-2xl font-bold text-center mb-4">Product List</h2>
 
@@ -34,7 +33,7 @@ export default function ProductsList() {
                 onChange={(e) => handleSearch(e)}
                 type="text"
                 id="table-search"
-                className={`block bg-${bgP} w-full p-3 pl-10 text-sm border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 `}
+                className={`block  w-full p-3 pl-10 text-sm border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 `}
                 placeholder="Search for items"
               />
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -58,7 +57,7 @@ export default function ProductsList() {
               </thead>
               <tbody>
                 {isProducts.length > 0 ? isProducts.map((product, index) => (
-                  <tr className={`bg-${bgP} text-${color} border-b`} key={index}>
+                  <tr className={`  border-b`} key={index}>
                     <td className="capitalize px-6 py-4 font-medium whitespace-nowrap">{product.productName}</td>
                     <td className="px-6 py-4"><img className="w-10 h-10 object-center" src={product.productImage} alt="product" /></td>
                     <td className="px-6 py-4 capitalize">{product.quantity}</td>
