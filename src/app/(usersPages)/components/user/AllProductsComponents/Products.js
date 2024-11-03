@@ -1,14 +1,14 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation'
 import { FaAngleRight, FaFilter } from "react-icons/fa";
 import { Drawer } from 'antd';
 import FilterSidebar from './FilterSidebar';
 import AllProducts from './AllProducts';
 
 export default function Products() {
-  const searchParams = useSearchParams();
-  const category = searchParams.get('category');
+  const router = useRouter();
+  const category = router.query?.category || "";
   const [selectedSubcategories, setSelectedSubcategories] = useState([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
