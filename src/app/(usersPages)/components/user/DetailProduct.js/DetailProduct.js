@@ -39,7 +39,7 @@ export default function DetailProduct({ productId }) {
                 {/* Product Information */}
                 <div className="space-y-6">
                     <h1 className="capitalize text-2xl sm:text-3xl font-extrabold text-slate-900">{detailProduct?.productName}</h1>
-                    <p className="text-xl sm:text-2xl font-bold text-green-600">RS. {detailProduct?.price?.op.toFixed(2)}</p>
+                    <p className="text-xl sm:text-2xl font-bold text-green-600">Rs. {detailProduct?.price?.op.toFixed(2)}</p>
                     <p className="capitalize text-gray-700">{detailProduct?.description}</p>
                     
                     {/* WhatsApp Order Button */}

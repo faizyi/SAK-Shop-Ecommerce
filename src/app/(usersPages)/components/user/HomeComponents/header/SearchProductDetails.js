@@ -40,7 +40,7 @@ export default function SearchProductDetails({ serachData, setShowSearch }) {
                     transition-colors duration-300 group-hover:text-indigo-600">
                       {product.productName}
                     </h3>
-                    <p className="text-sm text-gray-500 mt-1">${product.price.op}</p>
+                    <p className="text-sm text-gray-500 mt-1">Rs. {product.price.op}</p>
                   </div>
                 </div>
               </Link>

@@ -31,7 +31,7 @@ export default function FeaturedProductsSection() {
           </div>
           <div>
             <h3 className="capitalize text-base font-bold text-gray-800">{product.productName}</h3>
-            <h4 className="text-sm text-blue-600 font-bold mt-2">RS. {product.price.op}</h4>
+            <h4 className="text-sm text-blue-600 font-bold mt-2">Rs. {product.price.op}</h4>
           </div>
         </div>
         </Link>

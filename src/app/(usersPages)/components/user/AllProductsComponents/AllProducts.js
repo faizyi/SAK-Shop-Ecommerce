@@ -38,7 +38,7 @@ export default function AllProducts({ selectedSubcategories, selectedCategory })
               >
                 {product.quantity === "in stock" ? "In Stock" : "Out of Stock"}
               </span>
-              <span className="text-sm font-bold text-gray-900">RS. {product.price.op}</span>
+              <span className="text-sm font-bold text-gray-900">Rs. {product.price.op}</span>
             </div>
 
             {/* Details Button */}

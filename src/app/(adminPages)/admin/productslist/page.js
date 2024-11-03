@@ -60,7 +60,7 @@ export default function ProductsList() {
                     <td className="px-6 py-4 capitalize">{product.quantity}</td>
                     <td className="capitalize px-6 py-4">{product.category}</td>
                     <td className="capitalize px-6 py-4">{product.subcategory}</td>
-                    <td className="px-6 py-4">RS. {product.price.op}</td>
+                    <td className="px-6 py-4">Rs. {product.price.op}</td>
                     <td className="px-6 py-4 text-center">
                       <button
                         className="text-blue-600 hover:text-blue-800 mr-2"
