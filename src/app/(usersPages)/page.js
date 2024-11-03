@@ -6,8 +6,8 @@ export default function page() {
   return (
     <div>
         <HeroSection1/>
-        <FeaturedProductsSection/>
-        <ShopbyCategory/>
+        {/* <FeaturedProductsSection/>
+        <ShopbyCategory/> */}
         <Team/>
     </div>
   )
