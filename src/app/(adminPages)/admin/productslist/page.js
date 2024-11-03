@@ -20,10 +20,7 @@ export default function ProductsList() {
           <Loader />
         </div>
       ) : (
-        <div className={`p-4 space-y-2
-        
-        
-        rounded-lg w-full max-w-12xl`}>
+        <div className={`p-4 space-y-2 bg-white border border-gray-200 rounded-lg w-full max-w-12xl`}>
           <h2 className="text-2xl font-bold text-center mb-4">Product List</h2>
 
           <div className="flex justify-start mb-4">
@@ -59,7 +56,7 @@ export default function ProductsList() {
                 {isProducts.length > 0 ? isProducts.map((product, index) => (
                   <tr className={`  border-b`} key={index}>
                     <td className="capitalize px-6 py-4 font-medium whitespace-nowrap">{product.productName}</td>
-                    <td className="px-6 py-4"><img className="w-10 h-10 object-center" src={product.productImage} alt="product" /></td>
+                    <td className="px-6 py-4"><img className="w-16 h-16 object-contain" src={product.productImage} alt="product" /></td>
                     <td className="px-6 py-4 capitalize">{product.quantity}</td>
                     <td className="capitalize px-6 py-4">{product.category}</td>
                     <td className="capitalize px-6 py-4">{product.subcategory}</td>

@@ -22,8 +22,7 @@ export default function AddProduct() {
           <p>Product is being added.....</p>
         </div>
       ) : (
-        <div className="w-full max-w-full sm:max-w-4xl space-y-8 
-        rounded-lg shadow-lg">
+        <div className="p-4 space-y-2 bg-white border border-gray-200 rounded-lg w-full max-w-12xl">
           <div className={`p-10
            rounded-lg`}>
             <h2 className={`text-3xl font-extrabold text-center`}>Add New Product</h2>
