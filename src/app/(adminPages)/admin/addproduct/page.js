@@ -7,7 +7,7 @@ import useGetCategories from '@/app/(usersPages)/hooks/useGetCategories';
 import Loader from '@/app/(usersPages)/components/user/loader/loader';
 export default function AddProduct() {
   const { isLoading  } = useSelector((state) => state.loader);
-  // const { bgP, color } = useSelector((state) => state.mode);
+  const { bgP, color } = useSelector((state) => state.mode);
   const { product, handleChange, handleSubmit, handleImageChange } = addproductHook();
   const {handleCategoryClick, categories, showCategoryDropdown, setShowCategoryDropdown} = useGetCategories();
   const handleCategorySelect = (category) => {
@@ -16,17 +16,18 @@ export default function AddProduct() {
   }
   return (
     <div className={`
+      ${bgP === "slate-950" ? "bg-slate-950" : "bg-gray-200"}
     flex items-center justify-center mt-5 sm:ml-64 py-12 px-4 sm:px-6 lg:px-8`}>
       {isLoading ? (
         <div className="flex justify-center flex-col items-center mt-64">
           <Loader />
-          <p>Product is being added.....</p>
+          <p className={`text-${color}`}>Product is being added.....</p>
         </div>
       ) : (
         <div className="w-full max-w-full sm:max-w-4xl space-y-8 
         rounded-lg shadow-lg">
-          <div className={`p-10
-           rounded-lg`}>
+          <div className={`p-10 bg-${bgP} 
+          ${bgP === "slate-950" ? "border border-gray-300" : "shadow-lg"} rounded-lg text-${color}`}>
             <h2 className={`text-3xl font-extrabold text-center`}>Add New Product</h2>
             <p className="mt-2 text-center text-sm">
               Fill in the details to add a new product to your inventory.
@@ -40,7 +41,7 @@ export default function AddProduct() {
                   value={product.productName}
                   onChange={handleChange}
                   required
-                  className={` capitalize mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                  className={`bg-${bgP} capitalize mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                   placeholder="Enter product name"
                 />
               </div>
@@ -55,7 +56,7 @@ export default function AddProduct() {
                       value={product.price.op}
                       onChange={handleChange}
                       required
-                      className={` mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                      className={`bg-${bgP} mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                       placeholder="Original Price"
                     />
                   </div>
@@ -93,16 +94,16 @@ export default function AddProduct() {
                   onChange={handleChange}
                   onClick={handleCategoryClick}
                   required
-                  className={`capitalize  mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                  className={`capitalize bg-${bgP} mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                   placeholder="Enter or select a category"
                 />
                 {showCategoryDropdown && categories.length > 0 && (
-                  <div className={`mt-2 border border-gray-300 rounded-md shadow-md  max-h-60 overflow-y-auto`}>
+                  <div className={`mt-2 border border-gray-300 rounded-md shadow-md bg-${bgP} max-h-60 overflow-y-auto`}>
                     {categories.map((category, id) => (
                       <div
                         key={id}  // Use appropriate unique key if 'id' doesn't exist
                         onClick={() => handleCategorySelect(category)}
-                        className={`p-2 cursor-pointer`}
+                        className={`p-2 cursor-pointer hover:bg-${bgP}`}
                       >
                         {category}
                       </div>
@@ -119,13 +120,13 @@ export default function AddProduct() {
                   value={product.subcategory}
                   onChange={handleChange}
                   required
-                  className={`capitalize mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                  className={`capitalize bg-${bgP} mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                   placeholder="Enter subcategory"
                 />
               </div>
 
               <div>
-                <ProductImageUpload onImageChange={handleImageChange}/>
+                <ProductImageUpload onImageChange={handleImageChange} />
               </div>
 
               <div>
@@ -135,7 +136,7 @@ export default function AddProduct() {
                   value={product.description}
                   onChange={handleChange}
                   required
-                  className={`capitalize mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                  className={`capitalize bg-${bgP} mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                   rows="4"
                   placeholder="Enter product description"
                 ></textarea>
@@ -149,7 +150,7 @@ export default function AddProduct() {
                   value={product.quantity}
                   onChange={handleChange}
                   required
-                  className={`capitalize mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                  className={`capitalize bg-${bgP} mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                   placeholder="Enter quantity"
                 />
               </div>

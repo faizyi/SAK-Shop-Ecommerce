@@ -4,7 +4,7 @@ import loaderReducer from "./loader/loaderSlice";
 import productReducer from "./product/productSlice";
 import editProductReducer from "./product/editProductSlice";
 import sidebarReducer from "./openSidebar/OSSlice";
-// import modeReducer from "./mode/modeSlice";
+import modeReducer from "./mode/modeSlice";
 
 export const store = configureStore({
     reducer: {
@@ -12,6 +12,6 @@ export const store = configureStore({
         product : productReducer,
         editProduct : editProductReducer,
         sidebar : sidebarReducer,
-        // mode : modeReducer
+        mode : modeReducer
     },
 })
