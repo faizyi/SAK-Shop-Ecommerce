@@ -1,4 +1,4 @@
-// import Products from "@/app/components/user/AllProductsComponents/Products"
+import Products from "@/app/components/user/AllProductsComponents/Products"
 
 export const metadata = {
   title: 'Products',
@@ -7,8 +7,7 @@ export const metadata = {
 export default function page() {
   return(
     <div>
-      product
+      <Products/>
     </div>
-    // <Products/>
   )
 }

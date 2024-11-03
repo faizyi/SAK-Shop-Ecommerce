@@ -6,7 +6,6 @@ import Team from "../components/user/HomeComponents/heroSections/Team";
 export default function page() {
   return (
     <div>
-      page
         <HeroSection1/>
         <FeaturedProductsSection/>
         <ShopbyCategory/>
