@@ -1,8 +1,7 @@
-import useGetProduct from "@/app/customHooks/productHooks/useGetProduct";
 import React, { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import Checkbox from "./Checkbox";
-
+import useGetProduct from "@/app/(usersPages)/hooks/useGetProducts";
 export default function FilterSidebar({ onFilterChange, selectedCategory, selectedSubcategories }) {
   const {allProducts} = useGetProduct();
   const [localSelectedSubcategories, setLocalSelectedSubcategories] = useState([]);

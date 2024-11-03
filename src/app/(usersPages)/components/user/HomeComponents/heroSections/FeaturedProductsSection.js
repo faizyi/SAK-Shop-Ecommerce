@@ -1,5 +1,5 @@
 "use client";
-import useGetProduct from "@/app/customHooks/productHooks/useGetProduct";
+import useGetProduct from "@/app/(usersPages)/hooks/useGetProducts";
 import Link from "next/link";
 export default function FeaturedProductsSection() {
   const {allProducts} = useGetProduct();

@@ -1,4 +1,4 @@
-import useDeatilsProduct from '@/app/customHooks/userHooks/productHooks/useDeatilsProduct';
+import useDeatilsProduct from '@/app/(usersPages)/hooks/useDeatilsProduct';
 import Link from 'next/link';
 import { FaArrowLeft, FaWhatsapp, FaDollarSign, FaUndoAlt, FaHeadset } from 'react-icons/fa';
 

@@ -2,7 +2,7 @@
 import { FaAlignLeft, FaSearch, FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
 import { useState } from "react";
-import useGetCategories from "@/app/customHooks/productHooks/useGetCategories";
+import useGetCategories from "@/app/(usersPages)/hooks/useGetCategories";
 import HeaderSearchBar from "./HeaderSearchBar";
 import HeaderDrawer from "./drawer";
 import AuthSidebar from "../userAuth/AuthSidebar";

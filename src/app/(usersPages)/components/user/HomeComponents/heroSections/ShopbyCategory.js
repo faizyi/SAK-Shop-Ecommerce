@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 const categories = [
@@ -38,11 +37,10 @@ export default function ShopbyCategory() {
           {categories.map((category, index) => (
             <Link key={index} href={category.href}>
             <div className="px-4" key={index}>
-              <Image
-                height={300}
+              <img
                 src={category.src}
-                width={300}
                 alt={category.alt}
+                style={{width: "300px", height: "auto"}}
                 className="rounded-lg bg-white shadow-md overflow-hidden transition-transform 
                 hover:scale-105"
               />

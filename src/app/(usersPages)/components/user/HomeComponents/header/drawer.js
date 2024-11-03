@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { FaFacebookF, FaWhatsapp } from 'react-icons/fa';
-import useGetCategories from '@/app/customHooks/productHooks/useGetCategories';
+import useGetCategories from '@/app/(usersPages)/hooks/useGetCategories';
 import { Drawer } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
 export default function HeaderDrawer({ drawerVisible, setDrawerVisible }) {
@@ -35,11 +34,10 @@ export default function HeaderDrawer({ drawerVisible, setDrawerVisible }) {
       }}
     >
       <div className="bg-black w-full flex items-center justify-center">
-        <Image
+        <img
           src="/logo/logo.png"
           alt="My Store Logo"
-          width={120}
-          height={120}
+          style={{width: "140px", height: "auto"}}
           className="absolute top-1 left-2 right-0 cursor-pointer hover:scale-105 
           transition duration-500 ease-in-out"
         />

@@ -1,23 +1,12 @@
-import useGetProduct from '@/app/customHooks/productHooks/useGetProduct';
-import useGetCategoryProducts from '@/app/customHooks/userHooks/productHooks/useGetCategoryProducts';
+import useGetCategoryProducts from '@/app/(usersPages)/hooks/useGetCategoryProducts';
+import useGetProduct from '@/app/(usersPages)/hooks/useGetProducts';
 import Link from 'next/link';
-const Products = [
-  {
-    productImage: '/productsImages/yutong/clutch cylinder.png',
-    productName: 'Yutong',
-    description: "/shop/products?category=Yutong",
-    quantity: "In Stock",
-    price: {op: "7000"},
-    _id : 1,
-  },
-  // Add more categories here as needed
-];
 export default function AllProducts({ selectedSubcategories, selectedCategory }) {
   const { allProducts } = useGetProduct();
   const { filteredProducts } = useGetCategoryProducts(allProducts, selectedCategory, selectedSubcategories);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-      {Products.length > 0 ? Products.map((product, index) => (
+      {filteredProducts.length > 0 ? filteredProducts.map((product, index) => (
         <Link href={`/shop/products/${product._id}`} key={index}>
           <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-lg 
           hover:shadow-xl transition-all transform hover:-translate-y-1 hover:scale-105 

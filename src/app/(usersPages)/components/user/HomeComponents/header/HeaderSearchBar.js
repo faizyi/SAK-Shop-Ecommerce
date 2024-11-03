@@ -1,4 +1,4 @@
-import useSearchProduct from '@/app/customHooks/userHooks/productHooks/useSearchProduct';
+import useSearchProduct from '@/app/(usersPages)/hooks/useSearchProduct';
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 import SearchProductDetails from './SearchProductDetails';

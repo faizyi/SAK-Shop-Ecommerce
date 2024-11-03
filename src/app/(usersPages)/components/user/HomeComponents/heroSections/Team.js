@@ -18,15 +18,14 @@ export default function Team() {
           ].map((member) => (
             <div
               key={member.name}
-              className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform 
+              className="rounded-lg shadow-lg overflow-hidden transition-transform 
               hover:scale-105 transform"
             >
               {/* Team Member Image */}
-              <div className="relative h-64 overflow-hidden">
-                <Image
+              <div className="relative h-60 overflow-hidden">
+                <img
                   alt={`${member.name}'s profile picture`}
                   className="object-cover w-full h-full"
-                  layout="fill"
                   src={member.src}
                 />
               </div>
@@ -34,11 +33,11 @@ export default function Team() {
               {/* Team Member Info */}
               <div className="p-6 text-center">
                 <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
-                <p className="text-sm text-gray-500 mt-1">{member.role}</p>
+                {/* <p className="text-sm text-gray-500 mt-1">{member.role}</p>
                 <p className="text-gray-600 mb-4 text-sm">
                   Dedicated leader with extensive experience in the industry, focused on
                    delivering quality and driving innovation.
-                </p>
+                </p> */}
               </div>
             </div>
           ))}

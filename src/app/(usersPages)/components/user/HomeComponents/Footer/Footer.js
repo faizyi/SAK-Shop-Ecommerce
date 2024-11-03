@@ -1,7 +1,5 @@
 import { FaWhatsapp, FaEnvelope, FaPhone, FaFacebookF,FaMapMarkerAlt } from 'react-icons/fa';
 import Link from "next/link";
-import Image from "next/image";
-
 export default function Footer() {
   const date = new Date().getFullYear();
   
@@ -13,12 +11,11 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="lg:col-span-2">
             <Link href="/" className="h-10">
-              <Image
+            <img
                 src="/logo/logo.png"
                 alt="logo"
-                width={140}
-                height={140}
                 className="mb-4 transform cursor-pointer hover:scale-105 transition duration-500 ease-in-out"
+                style={{ width: '140px', height: 'auto' }} // Maintain aspect ratio
               />
             </Link>
             <p className="text-sm text-gray-500 mb-4">
@@ -82,12 +79,11 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className="text-center py-5 border-t flex flex-col items-center">
-        <Image
+      <img
           src="/logo/logo.png"
           alt="logo"
-          width={120}
-          height={120}
           className="mb-2 transform cursor-pointer hover:scale-105 transition duration-500 ease-in-out"
+          style={{ width: '120px', height: 'auto' }} // Maintain aspect ratio
         />
         <p className="text-sm text-gray-500">
           © {date} All rights reserved.
