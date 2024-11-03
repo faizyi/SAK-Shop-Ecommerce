@@ -1,20 +1,18 @@
-// "use client"
+"use client"
 import "./admin.css"
 import React from 'react'
 import AdminPage from './admin/page'
-// import { Provider } from 'react-redux'
-// import { useSelector } from "react-redux"
-// import { store } from "../../../src/app/redux/configStore"
+import { Provider } from 'react-redux'
+import { useSelector } from "react-redux"
+import { store } from "../../../src/app/redux/configStore"
 export default function Pageslayout({ children }) {
   return (
-    // <Provider store={store}>
-    // <LayoutContent>
-    <div>
+    <Provider store={store}>
+    {/* // <LayoutContent> */}
     <AdminPage />
       <div className="">{children}</div>
   {/* // </LayoutContent> */}
-  {/* // </Provider> */}
-  </div>
+  </Provider>
   )
 }
 
