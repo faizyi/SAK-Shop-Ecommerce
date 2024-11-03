@@ -1,11 +1,11 @@
 "use client"; // Ensure this is at the top if you're using Next.js or similar
 // import { toogleMode } from '@/app/redux/mode/modeSlice';
-// import { showSidebar } from '@/app/redux/openSidebar/OSSlice';
+import { showSidebar } from '@/app/redux/openSidebar/OSSlice';
 import React, { useState } from 'react';
 import { FaUserCircle, FaBars, FaMoon, FaSun } from 'react-icons/fa';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 const Navbar = () => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     // const { theme, bg,} = useSelector((state) => state.mode);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const handleClick = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
                             className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
                         >
                         <span 
-                        // onClick={() => dispatch(showSidebar())}
+                        onClick={() => dispatch(showSidebar())}
                         ><FaBars /></span>
                         </button>
                         <a href="/addproduct" className="flex ms-2 md:me-24">

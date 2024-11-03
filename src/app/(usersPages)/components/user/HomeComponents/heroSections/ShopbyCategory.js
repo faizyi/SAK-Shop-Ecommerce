@@ -2,17 +2,17 @@ import Link from 'next/link';
 
 const categories = [
   {
-    src: '/shopbycategory/Yutong-parts.webp',
+    src: '/shopbycategory/Yutong-Parts.webp',
     alt: 'Yutong parts category',
     href: "/shop/products?category=Yutong"
   },
   {
-    src: '/shopbycategory/Faw-parts.webp',
+    src: '/shopbycategory/Faw-Parts.webp',
     alt: 'Faw parts category',
     href: "/shop/products?category=Faw"
   },
   {
-    src: '/shopbycategory/Dongfeng-parts.webp',
+    src: '/shopbycategory/Dongfeng-Parts.webp',
     alt: 'Dongfeng parts category',
     href: "/shop/products?category=Dongfeng"
   },
