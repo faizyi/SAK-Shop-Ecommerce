@@ -1,12 +1,12 @@
 "use client"; // Ensure this is at the top if you're using Next.js or similar
-import { toogleMode } from '@/app/redux/mode/modeSlice';
-import { showSidebar } from '@/app/redux/openSidebar/OSSlice';
+// import { toogleMode } from '@/app/redux/mode/modeSlice';
+// import { showSidebar } from '@/app/redux/openSidebar/OSSlice';
 import React, { useState } from 'react';
 import { FaUserCircle, FaBars, FaMoon, FaSun } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 const Navbar = () => {
-    const dispatch = useDispatch();
-    const { theme, bg,} = useSelector((state) => state.mode);
+    // const dispatch = useDispatch();
+    // const { theme, bg,} = useSelector((state) => state.mode);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const handleClick = () => {
         setDropdownOpen(!dropdownOpen);
@@ -21,7 +21,9 @@ const Navbar = () => {
                             type="button"
                             className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
                         >
-                        <span onClick={() => dispatch(showSidebar())}><FaBars /></span>
+                        <span 
+                        // onClick={() => dispatch(showSidebar())}
+                        ><FaBars /></span>
                         </button>
                         <a href="/addproduct" className="flex ms-2 md:me-24">
                             <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">E-commerce</span>
@@ -29,9 +31,11 @@ const Navbar = () => {
                     </div>
                     <div className="flex items-center gap-2">
                         <div>
-                            <span onClick={() => dispatch(toogleMode())} 
+                            <span 
+                            // onClick={() => dispatch(toogleMode())} 
                             className="text-2xl cursor-pointer text-gray-700 dark:text-gray-300">
-                            {theme === "light" ? <FaMoon/> : <FaSun/>}</span>
+                            {/* {theme === "light" ? <FaMoon/> : <FaSun/>} */}
+                            </span>
                         </div>
                         <div className="cursor-pointer flex items-center ms-3 relative" onClick={handleClick}>
                         <p className="mr-2 font-bold text-sm text-gray-900 dark:text-white">Neil Sims</p>

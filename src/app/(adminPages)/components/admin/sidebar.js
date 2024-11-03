@@ -2,15 +2,16 @@
 import Link from "next/link";
 import { FaPlus, FaList, FaSignOutAlt } from "react-icons/fa";
 import { usePathname } from "next/navigation";
-import { useSelector, useDispatch } from "react-redux";
-import { hideSidebar } from "@/app/redux/openSidebar/OSSlice";
+// import { useSelector, useDispatch } from "react-redux";
+// import { hideSidebar } from "@/app/redux/openSidebar/OSSlice";
 const AdminSidebar = () => {
-    const dispatch = useDispatch();
-    const {isOpenSidebar} = useSelector((state) => state.sidebar);
+    // const dispatch = useDispatch();
+    // const {isOpenSidebar} = useSelector((state) => state.sidebar);
     // const { theme, bg, color } = useSelector((state) => state.mode);
     const pathname = usePathname();
     return (
-        <aside className={`${isOpenSidebar ? "" : "hidden sm:block"} fixed top-0 left-0 h-screen z-40 w-64 pt-20 p-5 transition-transform border-r border-gray-200 bg-slate-950 dark:border-gray-700`}>
+        <aside className={`
+         fixed top-0 left-0 h-screen z-40 w-64 pt-20 p-5 transition-transform border-r border-gray-200 bg-slate-950 dark:border-gray-700`}>
             <div className={`dark:bg-slate-950`}>
                 <ul className="space-y-2 font-medium">
                     <li>
@@ -19,7 +20,7 @@ const AdminSidebar = () => {
                         hover:bg-gray-100 dark:hover:bg-gray-700`}>
                             <FaPlus className="w-5 h-5" />
                             <span 
-                            onClick={() => dispatch(hideSidebar())}
+                            // onClick={() => dispatch(hideSidebar())}
                              className="ms-3">Add Product</span>
                         </Link>
                     </li>
@@ -30,7 +31,7 @@ const AdminSidebar = () => {
                         `}>
                         <FaList className="w-5 h-5" />
                             <span 
-                            onClick={() => dispatch(hideSidebar())} 
+                            // onClick={() => dispatch(hideSidebar())} 
                             className="ms-3">Products List</span>
                         </Link>
                     </li>
