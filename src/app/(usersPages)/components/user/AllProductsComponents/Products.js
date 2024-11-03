@@ -1,14 +1,14 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation'
+import { useSearchParams } from 'next/navigation';
 import { FaAngleRight, FaFilter } from "react-icons/fa";
 import { Drawer } from 'antd';
 import FilterSidebar from './FilterSidebar';
 import AllProducts from './AllProducts';
 
 export default function Products() {
-  const router = useRouter();
-  const category = router.query?.category || "";
+  const searchParams = useSearchParams(); // Retrieve search params
+  const [category, setCategory] = useState(searchParams.get("category"));
   const [selectedSubcategories, setSelectedSubcategories] = useState([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -17,8 +17,8 @@ export default function Products() {
   };
 
   useEffect(() => {
-    setSelectedSubcategories([]); // Clear selected subcategories on main category change
-  }, [category]);
+    setCategory(searchParams.get("category"));
+  }, [searchParams]);
 
   const handleDrawerOpen = () => setIsDrawerOpen(true);
   const handleDrawerClose = () => setIsDrawerOpen(false);
@@ -61,7 +61,9 @@ export default function Products() {
           </button>
         </div>
 
-        <AllProducts selectedSubcategories={selectedSubcategories} selectedCategory={category} />
+        <AllProducts selectedSubcategories={selectedSubcategories} 
+        selectedCategory={category}
+         />
       </main>
     </section>
   );
