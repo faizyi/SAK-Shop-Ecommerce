@@ -1,8 +1,8 @@
 "use client"
+import useGetProduct from '@/app/(usersPages)/hooks/useGetProducts';
+import { setProducts } from '@/app/redux/product/productSlice';
 import React, { useEffect, useState } from 'react'
-import useGetProduct from './useGetProduct'
 import { useDispatch} from "react-redux";
-import { setProducts } from '@/redux/product/productSlice';
 export default function useSearchHook() {
     const dispatch = useDispatch();
     const { allProducts, updateAllProducts } = useGetProduct();

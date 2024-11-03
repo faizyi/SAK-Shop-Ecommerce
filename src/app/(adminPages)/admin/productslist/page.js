@@ -1,10 +1,11 @@
 "use client";
-import Loader from "@/components/loader/loader";
 import { useSelector } from "react-redux";
 import { FaSearch, FaEdit, FaTrash } from 'react-icons/fa';
 import useSearchHook from "../../hooks/useSearch.Products";
 import delProductHook from "../../hooks/delProduct";
 import editProductModalHook from "../../hooks/editProduct";
+import Loader from "@/app/(usersPages)/components/user/loader/loader";
+import EditProductModal from "../../components/admin/editProductModal";
 export default function ProductsList() {
   const { isLoading } = useSelector((state) => state.loader);
   const { isProducts } = useSelector((state) => state.product);

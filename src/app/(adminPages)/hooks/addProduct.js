@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { showLoader, hideLoader } from "../../redux/loader/loaderSlice"
 import { addProduct } from '@/app/services/products/product';
+import { hideLoader, showLoader } from '@/app/redux/loader/loaderSlice';
 export default function addproductHook() {
   const dispatch = useDispatch();
     const [product, setProduct] = useState({

@@ -1,10 +1,10 @@
 "use client";
-import addproductHook from '@/customHooks/productHooks/addproductHook';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Loader from '@/components/loader/loader';
-import useGetCategories from '@/customHooks/productHooks/useGetCategories';
 import ProductImageUpload from './productImage';
+import addproductHook from '../../hooks/addProduct';
+import useGetCategories from '@/app/(usersPages)/hooks/useGetCategories';
+import Loader from '@/app/(usersPages)/components/user/loader/loader';
 export default function AddProduct() {
   const { isLoading  } = useSelector((state) => state.loader);
   const { bgP, color } = useSelector((state) => state.mode);

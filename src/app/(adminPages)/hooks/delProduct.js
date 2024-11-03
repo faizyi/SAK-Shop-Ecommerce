@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setProducts } from "@/redux/product/productSlice";
 import { delProduct } from "@/app/services/products/product";
+import { setProducts } from "@/app/redux/product/productSlice";
 export default function delProductHook(updateFilteredProducts) {
     const dispatch = useDispatch();
     const { isProducts } = useSelector((state) => state.product);

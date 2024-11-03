@@ -1,10 +1,10 @@
 "use client"
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setEditProduct } from '@/redux/product/editProductSlice';
-import { setProducts } from '@/redux/product/productSlice';
-import { showLoader, hideLoader } from '@/redux/loader/loaderSlice';
+import { setEditProduct } from '@/app/redux/product/editProductSlice';
 import { editProduct } from '@/app/services/products/product';
+import { setProducts } from '@/app/redux/product/productSlice';
+import { hideLoader, showLoader } from '@/app/redux/loader/loaderSlice';
 export default function editProductModalHook(updateFilteredProducts) {
     const { isEditProduct } = useSelector((state) => state.editProduct);
     const { isProducts } = useSelector((state) => state.product);

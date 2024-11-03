@@ -1,4 +1,4 @@
-import { convertToBase64 } from '@/utils/bufferToBase64';
+import { convertToBase64 } from '@/app/utils/bufferToBase64';
 import React, { useState } from 'react';
 
 export default function ProductImageUpload({ onImageChange }) {
