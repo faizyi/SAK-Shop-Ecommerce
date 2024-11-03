@@ -1,12 +1,12 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-    baseURL: "https://sakbackend.vercel.app/",
+    baseURL: "https://sakbackend-nhpdv4ukj-faizyis-projects.vercel.app/api",
     headers: {
-        "Content-Type": "application/json",
+      "Content-Type": "application/json",
     },
     withCredentials: true,
-});
+  });
 
 axiosInstance.interceptors.response.use(
     (config) =>{
