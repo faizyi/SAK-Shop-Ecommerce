@@ -53,7 +53,8 @@ export default function Products() {
           </div>
 
           <button
-            className="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition"
+            className="fixed top-29 z-50 right-4 bg-gray-800 text-white p-3 rounded-full shadow-lg
+             hover:bg-gray-700 transition"
             aria-label="Open Filter Sidebar"
             onClick={handleDrawerOpen}
           >

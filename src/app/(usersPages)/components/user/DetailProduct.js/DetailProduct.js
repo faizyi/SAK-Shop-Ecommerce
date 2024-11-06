@@ -45,7 +45,7 @@ export default function DetailProduct({ productId }) {
                     {/* WhatsApp Order Button */}
                     <div className="w-full sm:w-56 rounded-lg">
                         <Link
-                            href={`https://wa.me/whatsAppNumber?text=Hello, I'm interested in buying the ${detailProduct?.productName}`}
+                            href={`https://wa.me/+923002730249?text=Hi, I'm interested in buying the ${detailProduct?.productName}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded transition duration-300"
@@ -53,7 +53,7 @@ export default function DetailProduct({ productId }) {
                             <FaWhatsapp className="mr-2" />
                             Order on WhatsApp
                         </Link>
-                        <span className="text-sm text-gray-500">WhatsApp: +123-456-7890</span>
+                        <span className="text-sm text-gray-500">WhatsApp: +92 300 273 0249</span>
                     </div>
 
                     {/* Additional Content Section */}

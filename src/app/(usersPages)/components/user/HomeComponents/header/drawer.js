@@ -59,7 +59,7 @@ export default function HeaderDrawer({ drawerVisible, setDrawerVisible }) {
             {category}
           </Link> 
           ))}
-          <Link href="/contact" onClick={closeDrawer} 
+          <Link href="/contact-us" onClick={closeDrawer} 
           className="text-lg hover:underline underline-offset-4 transition duration-300 ease-in-out">
             Contact us
           </Link>
@@ -68,7 +68,7 @@ export default function HeaderDrawer({ drawerVisible, setDrawerVisible }) {
         <div className="border-t border-gray-300 pt-6">
           <div className="flex justify-center space-x-4 mb-4">
           <Link href="#" className="text-blue-500"><FaFacebookF className="w-6 h-6" /></Link>
-            <Link href="https://wa.me/1234567890" className="text-green-500">
+            <Link href="https://wa.me/+92 3002730249" className="text-green-500">
             <FaWhatsapp className="w-6 h-6" /></Link>
           </div>
           <p className="text-center text-xs text-gray-500">

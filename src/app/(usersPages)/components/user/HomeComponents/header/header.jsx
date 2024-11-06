@@ -53,7 +53,7 @@ export default function Header() {
             {category}
           </Link>
           ))}
-          <Link href="/" className="text-lg hover:underline underline-offset-4 
+          <Link href="/contact-us" className="text-lg hover:underline underline-offset-4 
           transition duration-300 ease-in-out">
             Contact us
           </Link>

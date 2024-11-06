@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaEnvelope, FaPhone, FaFacebookF,FaMapMarkerAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaEnvelope, FaPhone, FaFacebookF,FaMapMarkerAlt,FaClock } from 'react-icons/fa';
 import Link from "next/link";
 export default function Footer() {
   const date = new Date().getFullYear();
@@ -22,10 +22,11 @@ export default function Footer() {
               Your One-Stop Shop for Truck Parts. Find the perfect parts for your truck with our 
               extensive collection and expert advice.
             </p>
-            <p className="text-sm text-gray-500">
+            {/* <p className="text-sm text-gray-500">
               <FaEnvelope className="inline mr-2" />
-              <a href="mailto:contact@example.com" className="font-bold hover:underline">contact@example.com</a>
-            </p>
+              <a href="mailto:contact@example.com" className="font-bold hover:underline">
+                contact@example.com</a>
+            </p> */}
           </div>
 
           {/* Navigation Links */}
@@ -43,7 +44,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-black">Follow Us</h4>
             <ul className="flex gap-4">
               <li><Link href="#" className="text-gray-500 hover:text-blue-500"><FaFacebookF className="w-6 h-6" /></Link></li>
-              <li><Link href="https://wa.me/1234567890" className="text-gray-500
+              <li><Link href="https://wa.me/+92 3002730249" className="text-gray-500
                hover:text-green-500"><FaWhatsapp className="w-6 h-6" /></Link></li>
             </ul>
           </div>
@@ -54,23 +55,26 @@ export default function Footer() {
             <div className="space-y-4">
               <p className="text-sm text-gray-500">
                 <FaMapMarkerAlt className="inline mr-2" />
-                123 Street, City Name
+                X453+9V3, Sector 15A/1 Sadaf CHS Gulzar E Hijri 
+                Scheme 33, Karachi City, Sindh, Pakistan
               </p>
               <p className="text-sm text-gray-500">
                 <FaPhone className="inline mr-2" />
-                <span className="font-bold">+1 234 567 890</span>
+                <span className="font-bold">+92 3002730249</span>
               </p>
-              <p className="text-sm text-gray-500">
+              {/* <p className="text-sm text-gray-500">
                 <FaEnvelope className="inline mr-2" />
                 <a href="mailto:contact@example.com" className="font-bold hover:underline">contact@example.com</a>
-              </p>
+              </p> */}
               <p className="text-sm text-gray-500">
                 <FaWhatsapp className="inline mr-2" />
-                <a href="https://wa.me/1234567890" className="font-bold hover:underline">+1 234 567 890</a>
+                <a href="https://wa.me/+92 3002730249" className="font-bold hover:underline">+92 3002730249</a>
               </p>
-              <p className="text-sm text-gray-500">
-                <span className="font-semibold"></span> Mon-Sat 9:00 AM - 6:00 PM
-              </p>
+              <div className="text-sm text-gray-500">
+                <FaClock className="inline mr-2" />
+                Mon - Sun: 9:00 AM - 7:00 PM
+                Friday: Closed
+              </div>
             </div>
           </div>
 

@@ -15,6 +15,7 @@ export default function useGetCategories() {
                     setCategories(cacheData.data.categories);
                 }    
                 const data = await getCategories();
+                console.log(data)
                 if(data.status === 200){
                     await cache.put(cacheKey, new Response(JSON.stringify(data)));
                     setCategories(data.data.categories);
