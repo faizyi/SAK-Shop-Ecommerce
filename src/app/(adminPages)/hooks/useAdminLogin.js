@@ -1,3 +1,4 @@
+"use client"
 import { adminLogin } from '@/app/services/auth/admin'
 import { useDispatch } from 'react-redux';
 import { showLoader, hideLoader } from '@/app/redux/loader/loaderSlice';
