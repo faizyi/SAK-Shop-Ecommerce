@@ -4,13 +4,15 @@ import { toogleMode } from '@/app/redux/mode/modeSlice';  // Import the toggle a
 import React, { useState } from 'react';
 import { FaUserCircle, FaBars, FaMoon, FaSun } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
+import useAdminLogin from '../../hooks/useAdminLogin';
 const Navbar = () => {
+    const {adminLogout} = useAdminLogin();
+    const adminData = JSON.parse(localStorage.getItem('admin')) || localStorage.getItem('admin');
     const dispatch = useDispatch();
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const handleClick = () => {
         setDropdownOpen(!dropdownOpen);
     };
-
     return (
         <header className={`fixed top-0 z-50 w-full border-b bg-slate-950 dark:border-gray-700`}>
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
@@ -34,7 +36,7 @@ const Navbar = () => {
                         {theme === "light" ? <FaMoon/> : <FaSun/>}</span>
                     </div> */}
                     <div className="cursor-pointer flex items-center ms-3 relative" onClick={handleClick}>
-                    <p className="mr-2 font-bold text-sm text-gray-900 dark:text-white">Neil Sims</p>
+                    <p className="mr-2 font-bold text-sm text-gray-900 dark:text-white">{adminData?.name}</p>
                         <button
                             type="button"
                             className="flex text-sm bg-gray-800 rounded-full ring-4 ring-gray-300 dark:ring-gray-600"
@@ -45,11 +47,11 @@ const Navbar = () => {
                         {dropdownOpen && (
                             <div className="absolute right-0 top-11 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600">
                                 <div className="px-4 py-3">
-                                    <p className="text-sm text-gray-900 dark:text-white">Neil Sims</p>
-                                    <p className="text-sm font-medium text-gray-900 truncate dark:text-gray-300">neil.sims@flowbite.com</p>
+                                    <p className="text-sm text-gray-900 dark:text-white">{adminData?.name}</p>
+                                    <p className="text-sm font-medium text-gray-900 truncate dark:text-gray-300">{adminData?.email}</p>
                                 </div>
                                 <ul className="py-1">
-                                    <li>
+                                    <li onClick={adminLogout}>
                                         <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
                                     </li>
                                 </ul>

@@ -22,9 +22,8 @@ export default function useGetProduct() {
         } 
         const result = await getProducts();
         if (result.status === 200) {
-            const data = result.data.data;
-            await cache.put(cacheKey, new Response(JSON.stringify(data)));
-            setAllProducts(data);
+            await cache.put(cacheKey, new Response(JSON.stringify(result.data.data)));
+            setAllProducts(result.data.data);
             dispatch(hideLoader());
             // dispatch(setProducts(data));
         }

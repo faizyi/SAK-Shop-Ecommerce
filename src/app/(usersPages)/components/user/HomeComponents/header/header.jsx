@@ -13,6 +13,9 @@ export default function Header() {
   const [showCart, setShowCart] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const {categories} = useGetCategories();
+  function handleDrawerToggle() {
+    setDrawerVisible((prev) => !prev);
+  }
   return (
     <header className={`border-b sticky top-0 z-50 
     ${showSearch ? "" : "bg-opacity-90 backdrop-filter backdrop-blur-sm"} bg-white`}>
@@ -23,7 +26,7 @@ export default function Header() {
           <FaAlignLeft
             className="h-6 w-6 cursor-pointer text-gray-700 hover:text-primary 
               transition-transform transform hover:scale-110"
-            onClick={() => setDrawerVisible(true)}
+              onClick={handleDrawerToggle}
           />
         </div>
         <Link href="/" className="h-10">

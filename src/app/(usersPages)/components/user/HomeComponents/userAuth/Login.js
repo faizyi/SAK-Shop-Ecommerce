@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
 import { Button, Input, Form, Checkbox, Typography } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-export default function Login({ toggleForm }) {
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
-    }
+import useAdminLogin from '@/app/(adminPages)/hooks/useAdminLogin';
+import { useSelector } from 'react-redux';
+export default function Login() {
+  const { isLoading  } = useSelector((state) => state.loader);
+  const {onFinish} = useAdminLogin();
   return (
     <div className="p-6">
       <Form name="login" onFinish={onFinish} className="login-form">
-        <Form.Item
-          name="username"
-          rules={[{ required: true, message: 'Please input your Username!' }]}
+      <Form.Item
+          name="email"
+          rules={[{ required: true, message: 'Please input your Email!' }]}
         >
           <Input
             prefix={<UserOutlined />}
-            placeholder="Username"
+            placeholder="Email"
             size="large"
             className="rounded-md"
           />
@@ -40,15 +41,15 @@ export default function Login({ toggleForm }) {
             size="large"
             className="w-full rounded-md"
           >
-            Log in
+            {isLoading ? "Logging in..." : "Login"}
           </Button>
         </Form.Item>
-        <Typography.Paragraph className="text-center">
+        {/* <Typography.Paragraph className="text-center">
           Don't have an account?{' '}
           <Button type="link" onClick={toggleForm}>
             Signup
           </Button>
-        </Typography.Paragraph>
+        </Typography.Paragraph> */}
       </Form>
     </div>
   )

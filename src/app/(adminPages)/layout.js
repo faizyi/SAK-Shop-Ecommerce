@@ -5,7 +5,16 @@ import AdminPage from './admin/page'
 import { Provider } from 'react-redux'
 // import { useSelector } from "react-redux"
 import { store } from "../../../src/app/redux/configStore"
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 export default function Pageslayout({ children }) {
+  const router = useRouter();
+  useEffect(()=>{
+    const admin = JSON.parse(localStorage.getItem('admin'));
+    if(!admin){
+      router.push('/')
+    }
+  },[router])
   return (
     <Provider store={store}>
      {/* <LayoutContent> */}

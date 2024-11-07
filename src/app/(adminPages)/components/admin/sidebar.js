@@ -4,8 +4,10 @@ import { FaPlus, FaList, FaSignOutAlt } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { hideSidebar } from "@/app/redux/openSidebar/OSSlice";
+import useAdminLogin from "../../hooks/useAdminLogin";
 
 const AdminSidebar = () => {
+    const {adminLogout} = useAdminLogin();
     const dispatch = useDispatch();
     const { isOpenSidebar } = useSelector((state) => state.sidebar);
     const pathname = usePathname();
@@ -35,7 +37,7 @@ const AdminSidebar = () => {
                         className="ms-3">Products List</span>
                     </Link>
                 </li>
-                <li>
+                <li onClick={adminLogout}>
                     <Link href="/productslist" className={`
                     flex items-center p-2 text-gray-900 rounded-lg dark:text-white
                     hover:bg-gray-100 dark:hover:bg-gray-700
