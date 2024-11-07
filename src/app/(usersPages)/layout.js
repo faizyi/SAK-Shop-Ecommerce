@@ -9,10 +9,12 @@ import { useRouter } from "next/navigation";
 export default function layout({ children }) {
   const router = useRouter();
   useEffect(()=>{
-    const admin = JSON.parse(localStorage.getItem('admin'));
+    if (typeof window !== 'undefined') {
+      const admin = localStorage.getItem('admin');
     if(admin){
       router.push('/admin')
     }
+  }
   },[router])
   return (
     <Provider store={store}>

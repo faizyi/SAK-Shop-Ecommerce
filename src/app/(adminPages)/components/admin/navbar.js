@@ -5,9 +5,10 @@ import React, { useState } from 'react';
 import { FaUserCircle, FaBars, FaMoon, FaSun } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import useAdminLogin from '../../hooks/useAdminLogin';
+import getAdmin from '../../hooks/getAdmin';
 const Navbar = () => {
     const {adminLogout} = useAdminLogin();
-    const adminData = JSON.parse(localStorage.getItem('admin')) || localStorage.getItem('admin');
+    const {adminData} = getAdmin();
     const dispatch = useDispatch();
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const handleClick = () => {
