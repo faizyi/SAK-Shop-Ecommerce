@@ -57,6 +57,6 @@ export default function Cart({ showCart, setShowCart }) {
     // };
 
     return (
-        <Sidebar showCart={[showCart, setShowCart]}/>
+        <Sidebar showCart={[showCart, setShowCart, products]}/>
     );
 }

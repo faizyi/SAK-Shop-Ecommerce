@@ -1,5 +1,5 @@
 "use client";
-import { FaAlignLeft, FaSearch, FaUserCircle } from "react-icons/fa";
+import { FaAlignLeft, FaSearch, FaUserCircle, FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
 import { useState } from "react";
 import useGetCategories from "@/app/(usersPages)/hooks/useGetCategories";
@@ -67,6 +67,9 @@ export default function Header() {
           <div onClick={() => setShowSearch(!showSearch)}>
             <FaSearch className="h-5 w-5 text-gray-600 hover:text-blue-600 transition-transform transform hover:scale-110 cursor-pointer" />
           </div>
+          {/* <div onClick={() => setShowSearch(!showSearch)}>
+            <FaShoppingCart onClick={()=> setShowCart(!showCart)} className="h-5 w-5 text-gray-600 hover:text-blue-600 transition-transform transform hover:scale-110 cursor-pointer" />
+          </div> */}
           <div onClick={() => setShowForm(!showForm)}>
             <FaUserCircle className="h-5 w-5 text-gray-600 hover:text-blue-600 transition-transform transform hover:scale-110 cursor-pointer" />
           </div>

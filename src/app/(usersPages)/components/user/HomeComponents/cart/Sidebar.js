@@ -1,6 +1,6 @@
 import React from 'react'
 import { Drawer } from 'antd';
-export default function Sidebar({ showCart, setShowCart }) {
+export default function Sidebar({ showCart, setShowCart, products }) {
   const closeDrawer = () => setShowCart(false);
   return (
     <Drawer

@@ -1,7 +1,7 @@
 import axios from "axios";
 // baseURL: "https://sakbackend.vercel.app/api",
 export const axiosInstance = axios.create({
-    baseURL: "https://sakbackend.vercel.app/api",
+    baseURL: "http://localhost:5000/api",
     headers: {
       "Content-Type": "application/json",
     },
